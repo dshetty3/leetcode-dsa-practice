@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: int
         """
         nums.sort()
-        return nums[len(nums) // 2] #return thr num which occurs in majority 
+        return nums[len(nums) // 2] #return the num which occurs in majority 
 
        
 
