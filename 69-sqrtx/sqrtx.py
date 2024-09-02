@@ -4,7 +4,7 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
-        l, r = 0, x
+        l, r = 1, x
         res = 0
 
         while l <= r:
