@@ -10,6 +10,9 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[int]
         """
+
+        # need to read the values of the node from left to right
+        #so 1,3,2
         res=[]
         self.Traversal(root, res)
         return res
