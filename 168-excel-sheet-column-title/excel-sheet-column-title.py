@@ -5,12 +5,16 @@ class Solution(object):
         :rtype: str
         """
 
-        res = ""
+        res = "" #return type will be alphabets string
         while columnNumber > 0:
-            columnNumber -= 1
-            res = chr((columnNumber % 26) + ord('A')) + res
-            columnNumber //=26
-        return res
+            offset = (columnNumber - 1) % 26
+            res += chr(ord('A') + offset)
+            columnNumber = (columnNumber - 1) // 26
+
+        return res[::-1]
+
+       
+
 
 
 
