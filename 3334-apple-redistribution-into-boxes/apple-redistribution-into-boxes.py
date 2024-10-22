@@ -10,6 +10,6 @@ class Solution:
             num_boxes += 1
             if total <= 0:
                 return num_boxes
-        return num_boxes
+        
 
         
