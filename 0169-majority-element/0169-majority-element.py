@@ -11,7 +11,7 @@ class Solution:
         
 
         max_val = -1
-        ans = -1
+        ans = 0
 
         for key,val in count.items():
             if val > max_val:
