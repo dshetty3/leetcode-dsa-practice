@@ -13,14 +13,13 @@ class Solution(object):
         :rtype: List[int]
         """
 
-        def dfs(node):
-            if not node: return
+        def dfs(node, ans):
+            if not node: return 
             for child in node.children:
-                dfs(child)
-            res.append(node.val)
-        res = []
-        dfs(root)
-
-        return res
+                dfs(child,ans)
+            ans.append(node.val)
+        ans = []
+        dfs(root,ans)
+        return ans
 
         
