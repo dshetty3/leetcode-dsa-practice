@@ -5,20 +5,18 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         res = []
+        sol = []
 
-        subset = []
-        def dfs(i):
-            if i >= len(nums):
-                res.append(subset.copy())
+        def backtrack(i):
+            if i == len(nums):
+                res.append(sol[:])
                 return
+            
+            backtrack (i + 1)
+            
+            sol.append(nums[i])
+            backtrack(i + 1)
+            sol.pop()
 
-            subset.append(nums[i])
-            dfs(i + 1)
-
-            subset.pop()
-            dfs(i + 1)
-        dfs(0)
+        backtrack(0)
         return res
-
-        
-        
