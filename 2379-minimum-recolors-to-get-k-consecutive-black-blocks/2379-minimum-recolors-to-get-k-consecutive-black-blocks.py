@@ -19,7 +19,6 @@ class Solution(object):
                 if blocks[l] == 'W':
                     white -= 1
                 l += 1
-
         return recolor
             
 
