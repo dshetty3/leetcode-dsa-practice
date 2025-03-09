@@ -1,26 +1,24 @@
 class Solution(object):
+
     def coinChange(self, coins, amount):
         """
         :type coins: List[int]
         :type amount: int
         :rtype: int
         """
-        if amount == 0:
-            return 0
+        dp = [amount + 1] * (amount + 1)
 
-        for coin in coins:
-            remain = amount - coin
-            if remain < 0:
-                ans = minCoin(ans, coinChange(subproblem, coin) + 1)
-        return ans
+        dp[0] = 0
+
+        for a in range(1, amount + 1):
+            for c in coins:
+                if a - c >= 0:
+                    dp[a] = min(dp[a], 1 + dp[a -c])
+        return dp[amount] if dp[amount] != amount + 1 else -1
 
 
-    def minCoin(a,b):
-        if a is None:
-            return b
-        if b is None:
-            return a
-        return min(a,b)
+
+    
 
         
 
