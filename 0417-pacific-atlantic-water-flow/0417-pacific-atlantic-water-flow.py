@@ -13,11 +13,11 @@ class Solution(object):
         m = len(heights)
         n = len(heights[0])
 
-        for j in range(n):
+        for j in range(1, n):
             p_queue.append((0,j))
             p_seen.add((0,j))
         
-        for i in range(1, m):
+        for i in range(m):
             p_queue.append((i,0))
             p_seen.add((i,0))
 
