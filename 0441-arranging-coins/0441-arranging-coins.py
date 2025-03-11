@@ -22,7 +22,7 @@ class Solution(object):
 
         while l <= r:
             m = (l + r) // 2
-            coins = (m / 2) * (m + 1)
+            coins = (m * (m + 1) ) / 2
             if coins > n:
                 r = m - 1
             else:
