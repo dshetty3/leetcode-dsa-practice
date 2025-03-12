@@ -12,6 +12,7 @@ class Solution(object):
         order = []
         g = defaultdict(list)
         courses = prerequisites
+
         for a, b in courses:
             g[a].append(b)
         
@@ -31,7 +32,7 @@ class Solution(object):
 
             states[i] = VISITED
             order.append(i)
-            return True
+            return order
 
         for i in range(numCourses):
             if not dfs(i): 
