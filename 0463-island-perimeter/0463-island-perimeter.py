@@ -1,33 +1,18 @@
-class Solution(object):
-    def islandPerimeter(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
+class Solution:
+    def islandPerimeter(self, grid: List[List[int]]) -> int:
 
-        visit = set()
+        m = len(grid)
+        n = len(grid[0])
+        perimeter = 0
 
-        def dfs(i,j):
-            if i >= len(grid) or j >= len(grid[0]) or \
-            i < 0 or j < 0 or grid[i][j] == 0:
-                return 1
-            if (i, j) in visit:
-                return 0
-        
-            visit.add((i,j))
-
-            p = dfs(i, j+1)
-            p += dfs(i + 1, j)
-            p += dfs(i, j - 1)
-            p += dfs(i - 1, j)
-            return p
-        
-
-        for i in range(len(grid)):
-            for j in range(len(grid[0])):
-                if grid[i][j]:
-                    return dfs(i, j)
-        
-
-
+        for r in range(m):
+            for c in range(n):
+                if grid[r][c] == 1: 
+                    perimeter += 4
+                    for dr, dc in [(0,1), (1,0), (-1,0), (0,-1)]:
+                        row = r + dr
+                        col = c + dc 
+                        if 0 <= row < m and 0 <= col < n and grid[row][col] == 1:
+                            perimeter -= 1
+        return perimeter 
         
