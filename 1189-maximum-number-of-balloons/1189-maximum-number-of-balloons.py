@@ -13,12 +13,11 @@ class Solution(object):
             if c in word:
                 counter[c] += 1
             
-        for c in word:
-            if c not in counter:
-                return 0
+        # for c in word:
+        #     if c not in counter:
+        #         return 0
             
-        else:
-            return min(counter['b'], 
+        return min(counter['b'], 
                             counter['a'],
                             counter['l'] // 2,
                             counter['o'] // 2,
