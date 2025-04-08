@@ -14,7 +14,7 @@ class Solution(object):
 
         fast = head
         slow = head
-        prev = None
+        prev = head
         
         while fast and fast.next:
             prev = slow
