@@ -5,19 +5,22 @@ class Solution(object):
         :rtype: int
         """
 
-        m = len(grid)
-        n = len(grid[0])
-        count = 0
-        grid2 = []
-        for i in range(n):
-            column = []
-            for j in range(m):
-                column.append(grid[j][i])
-            grid2.append(column)
         
+        
+        count = Counter()
         for r in grid:
-            count += grid2.count(r)
-        return count
+            count[tuple(r)] += 1
+        
+
+        res = 0
+        for i in range(len(grid)):
+            temp = []
+            for j in range(len(grid)):
+                temp.append(grid[j][i])
+            
+            res += count[tuple(temp)]
+        
+        return res
         
             
 
