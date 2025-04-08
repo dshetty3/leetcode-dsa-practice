@@ -8,10 +8,10 @@ class Solution(object):
 
         ROWS = len(maze)
         COLS = len(maze[0])
-        start = tuple(entrance)
-        q = deque([start])
+        # start = tuple(entrance)
+        q = deque([entrance])
         res = 0
-        visit = set([start])
+        visit = set(entrance)
         directions = [(1,0), (0,1), (-1,0), (0, -1)]
 
         while q:
