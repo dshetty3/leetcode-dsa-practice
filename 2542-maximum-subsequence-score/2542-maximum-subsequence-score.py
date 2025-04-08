@@ -16,10 +16,11 @@ class Solution(object):
         for n1, n2 in pairs:
             n1Sum += n1
             heapq.heappush(minHeap, n1)
-            if len(minHeap) == k:
-                res = max(res, n1Sum * n2)
             if len(minHeap) > k:
                 n1Sum -=  heapq.heappop(minHeap)
+            if len(minHeap) == k:
+                res = max(res, n1Sum * n2)
+            
         return res
 
 
