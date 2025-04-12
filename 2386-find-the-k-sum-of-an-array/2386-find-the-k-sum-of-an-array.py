@@ -35,3 +35,5 @@ class Solution:
                     visited.add(new2)
 
         return 0  # fallback if k is too large
+
+# this solution works
