@@ -1,5 +1,5 @@
 class ListNode:
-    def __init__(self, val, next, prev):
+    def __init__(self, val = 0, next = None, prev = None):
         self.val = val
         self.prev = prev
         self.next = next
@@ -11,9 +11,10 @@ class MyCircularQueue(object):
         :type k: int
         """
         self.space = k
-        self.left = ListNode(0, None, None)
-        self.right = ListNode(0, None, self.left)
+        self.left = ListNode()
+        self.right = ListNode()
         self.left.next = self.right
+        self.right.prev = self.left
         
     def enQueue(self, value):
         """
