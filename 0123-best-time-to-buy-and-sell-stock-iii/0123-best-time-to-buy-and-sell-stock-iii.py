@@ -5,12 +5,16 @@ class Solution(object):
         :rtype: int
         """
 
-        buy1, buy2 = float("inf"), float("inf")
-        profit1, profit2 = 0, 0
+        if not prices: return 0
+
+        A = -prices[0]
+        B = float("-inf")
+        C = float("-inf")
+        D = float("-inf")
+
         for p in prices:
-            buy1 = min(buy1, p)
-            profit1 = max(profit1, p - buy1)
-            buy2 = min(buy2, p - profit1)
-            profit2 = max(profit2, p - buy2)
-        return profit2
-        
+            A = max(A, -p)
+            B = max(B, A + p)
+            C = max(C, B - p)
+            D = max(D, C + p)
+        return D
