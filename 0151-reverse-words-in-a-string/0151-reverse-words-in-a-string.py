@@ -5,9 +5,14 @@ class Solution(object):
         :rtype: str
         """
 
-        words = s.split()
-        for word in words:
-            c = words[::-1]
-        return ' '.join(c)
+        s = s.split()
+        l = 0
+        r = len(s) - 1
+
+        while l < r:
+            s[l], s[r] = s[r], s[l]
+            l += 1
+            r -= 1
+        return ' '.join(s)
 
         
