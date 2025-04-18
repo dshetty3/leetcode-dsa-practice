@@ -7,12 +7,12 @@ class Solution(object):
 
         seen = [False] * len(rooms)
         seen[0] = True
-        stack = [0]
+        q = deque([0])
 
-        while stack:
-            node = stack.pop() 
+        while q:
+            node = q.popleft() 
             for n in rooms[node]: 
                 if not seen[n]:
                     seen[n] = True
-                    stack.append(n)
+                    q.append(n)
         return all(seen)      
