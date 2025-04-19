@@ -8,7 +8,9 @@ class Solution(object):
         """
 
         head = costs[:candidates]
-        tail = costs[max(candidates, len(costs) - candidates):]
+        tail = []
+        for i in range(len(costs) - 1, len(costs) - candidates - 1, -1): 
+            tail.append(costs[i])   
         
         heapify(head)
         heapify(tail)
