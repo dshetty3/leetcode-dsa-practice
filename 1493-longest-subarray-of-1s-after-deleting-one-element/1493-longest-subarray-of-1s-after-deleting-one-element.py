@@ -19,7 +19,7 @@ class Solution(object):
                     zero_count -= 1
                 l += 1
         
-            max_count = max(max_count, r - l + 1)
+            max_count = max(max_count, r - l)
 
-        return max_count - 1
+        return max_count
         
