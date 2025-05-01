@@ -7,22 +7,19 @@ class Solution(object):
 
 
         
-        res = nums[0]
-        currMin, currMax = 1, 1
+        currMin = 1
+        currMax = 1
+        res = max(nums)
 
-        # for i in range(len(nums)):
-        #     curr = nums[i]
-        #     res = max(curr, res)
-        #     for j in range(i+1, len(nums)):
-        #         curr *= nums[j]
-        #         res = max(curr, res)
-        
-        # return res
-
-        for num in nums:
-            tmp = currMax * num
-            currMax = max(num * currMax, num * currMin, num)
-            currMin = min(tmp, num * currMin, num)
+        for n in nums:
+            if n == 0:
+                currMin = 1
+                currMax = 1
+                continue
+            temp = n * currMax 
+            
+            currMax = max(n * currMax, n * currMin, n)
+            currMin = min(temp, n * currMin, n)
             res = max(res, currMax)
         return res
 
