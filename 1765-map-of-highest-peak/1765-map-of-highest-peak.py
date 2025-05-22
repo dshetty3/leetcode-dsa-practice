@@ -10,10 +10,11 @@ class Solution:
 
         for r in range(ROWS):
             for c in range(COLS):
-                if isWater[r][c]:
+                if isWater[r][c] == 1:
                     q.append((r,c))
                     visit.add((r,c))
                     res[r][c] = 0
+
         while q:
             r, c = q.popleft()
             h = res[r][c]
