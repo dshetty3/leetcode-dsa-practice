@@ -42,6 +42,7 @@ class Solution(object):
                         seen.add((r,c))
                         queue.append((r,c))
             return coords
+            
         p_coords = getCords(p_queue, p_seen)
         a_coords = getCords(a_queue, a_seen)
 
